@@ -1,7 +1,8 @@
 """
 Mubinjon Satymov
 
-Exercise 2.1: 
+Exercise 2.1
+ 
 Another ball dropped from a tower a ball is dropped from a tower of height h 
 with initial velocity zero. Write a program that asks the user to enter the 
 height in meters of the tower and then calculates and prints the time the ball 

@@ -1,7 +1,8 @@
 """
 Mubinjon Satymov
 
-Exercise 3.2: Curve plotting
+Exercise 3.2 Curve plotting
+
 a)  Make a plot of the so-called deltoid curve, which is defined parametrically 
 by the equations, x = 2 cos θ + cos 2θ, y = 2 sin θ − sin 2θ, where 0 ≤ θ < 2π. 
 Take a set of values of θ between zero and 2π and calculate x and y for each 

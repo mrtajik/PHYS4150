@@ -1,7 +1,8 @@
 """
 Mubinjon Satymov
 
-Exercise 2.4:
+Exercise 2.4
+    
 A spaceship travels from Earth in a straight line at relativistic speed v to 
 another planet x light years away. Write a program to ask the user for the 
 value of x and the speed v as a fraction of the speed of light c, then print 

@@ -14,7 +14,38 @@ You should see that the accuracy of the calculation initially gets better as δ
 gets smaller, but then gets worse again. Plot your result as a function of δ.
 Why is this?
 
-Solution
-Part a)
-Part b)
+Solution:
+    General formula to calculate derivative 
+    (df/dx)=lim((f(x+δ)-f(x)))/(δ)
+    where δ approaches 0;
+    
+Q/A:    Part a) 
+        Analytical and numerical derivative would not agree because for 
+        numerical calculation value of "n" cannot be Zero. If we start from
+        Zero the compiler would show us an error;
+        
+        Part b)
+        Since there floating point limitation in Python the smallest value
+        of "δ" started approaching Zero for df/dx. As we can see from graph 
+        from it is "safer" if we limit the values of "δ" from 1e-4 to 1e-12;
 """
+#Part a:
+import matplotlib.pyplot as plt
+import numpy as np
+def f(x):     #defining function f(x)=x*(x-1);
+    f=x*(x-1)
+    return f
+x=1          #Declaring value of x;
+n=1e-2       #n represent "δ";
+e=(f(x+n)-f(x))/n #evaluating derivative; 
+print("at x=1, df/dx= ",e)
+
+#Part b:
+n=[1e-2,1e-4,1e-6,1e-8,1e-10,1e-12,1e-14]
+ans=[]     #Creating empty array 
+for k in n: 
+    e=f(1+k)-f(1)
+    print(e/k)
+    ans.append(e/k)  #Assigning to array values of "e/k";
+plt.plot(np.log10(n),ans)  #Plotting in semilog scale;
+plt.show()

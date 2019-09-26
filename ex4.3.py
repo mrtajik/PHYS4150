@@ -22,7 +22,8 @@ Solution:
 Q/A:    Part a) 
         Analytical and numerical derivative would not agree because for 
         numerical calculation value of "n" cannot be Zero. If we start from
-        Zero the compiler would show us an error;
+        Zero the compiler would show us an error, since devision by Zero not 
+        allowed;
         
         Part b)
         Since there floating point limitation in Python the smallest value

@@ -5,7 +5,7 @@ Exercise 4.3: Calculating derivatives
 
 a)  Write a program that defines a function f(x) returning the value x(x−1), 
 then calculates the derivative of the function at the point x = 1 using the 
-formula above with δ = 10−2. Calculate the true value of the same derivative 
+formula above with δ = 1e−2. Calculate the true value of the same derivative 
 analytically and compare with the answer your program gives. 
 The two will not agree perfectly. Why not?
 

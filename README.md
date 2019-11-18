@@ -1,1 +1,2 @@
-This rep for Phys 4150
+Physics 4150 Lab Section
+Codee for Lab Section

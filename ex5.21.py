@@ -30,7 +30,8 @@ sophisticated visualization might use the arrow object from the visual package,
 drawing a grid of arrows with direction and length chosen to represent the 
 field.
 
-Solution
-Part a)
-Part b)
-"""
+Solution:
+    
+"""    
+#Part a)
+#Part b)

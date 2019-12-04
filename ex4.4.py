@@ -39,7 +39,7 @@ I=0
 for i in range(N):    #loop to calculate all area of all rectangles;
     I=f(b+h*i)*h +I
     i=i+1
-print("Value of integral when N=100, I=",abs(I))
+print("Part A:\nValue of Integral when N=100, I=",abs(I))
 
 #Part b)
 N=10000      #Number of rectangles;
@@ -49,4 +49,4 @@ for i in range(N):    #loop to calculate all area of all rectangles;
     I=f(b+h*i)*h +I
     i=i+1
 err=abs(((abs(I)-(np.pi/2))/(np.pi/2))*100)
-print("Value of integral when N=10000 I=",abs(I),"\n Accuracy % error {:.4f}".format(err))
+print("\nPart B:\nValue of Integral when N=10000 I=",abs(I),"\nAccuracy % Error {:.4f}".format(err))

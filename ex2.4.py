@@ -26,14 +26,18 @@ Part b: For a passenger on board the ship we use:
 """
 #Part a
 import numpy as np
+print("Part A:")
 x=float(input("How far planet X  away in light years= "))
-v=float(input("Relativistic speed of a spaceship v= "))
+v=float(input("Relativistic speed of a spaceship(fraction of Speed of light) v= "))
 t=x/v
 print("For observer on Earth spaceship would reach planet X in {:.2f} light years".format(t))
-
+ 
 #Part b 
-x=10  #distance
-v=.99 #speed
+print("\nPart B:")
+print("Distance in light years=10")
+print("Speed=0.99c")
+x=10
+v=.99
 t=x/v
 t0=t*(np.sqrt(1-(v**2)))
 print("Passenger on board ship would reach planet X in {:.2f} light years".format(t0))

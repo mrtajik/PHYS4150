@@ -18,8 +18,8 @@ import numpy as np
 import scipy.constants as const
 import astropy.units as unit
 g=const.g                           #declaring constant "g" in SI
-s=float(input("Enter hight of the building: "))                    
+s=float(input("\nEnter hight of the building in meters: "))                    
 t=(np.sqrt((2*s)/(g)))              #Calculating value of "t"
 t1=t*unit.s                         #Adding SI unit(second) to value of t
-print("It takes {:.2f} until the ball hits the ground".format(t1))
+print("\nIt takes {:.2f} until the ball hits the ground".format(t1))
 #For H=100 we just enter value of H to our program

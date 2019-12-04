@@ -39,14 +39,16 @@ def f(x):     #defining function f(x)=x*(x-1);
 x=1          #Declaring value of x;
 n=1e-2       #n represent "δ";
 e=(f(x+n)-f(x))/n #evaluating derivative; 
-print("at x=1, df/dx= ",e)
+print("Part A:\nat x=1 and δ=1e-2, \nValue of df/dx=",e)
 
 #Part b:
 n=[1e-2,1e-4,1e-6,1e-8,1e-10,1e-12,1e-14]
 ans=[]     #Creating empty array 
 for k in n: 
     e=f(1+k)-f(1)
-    print(e/k)
     ans.append(e/k)  #Assigning to array values of "e/k";
 plt.plot(np.log10(n),ans)  #Plotting in semilog scale;
+plt.title('Part B:Error Distribution Graph')
+plt.xlabel('Value of "δ" in Logarithmic Scale')
+plt.ylabel('Value of Evaluated Function')
 plt.show()

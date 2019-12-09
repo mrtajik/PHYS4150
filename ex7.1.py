@@ -31,6 +31,7 @@ y=np.sin(np.pi*n/1000)*np.sin(20*np.pi*n/1000)
 plt.plot(n,y)
 plt.title('Graph of Part C')
 plt.show()
+
 fftc=np.fft.rfft(y)
 plt.plot(fftc*np.conjugate(fftc))
 plt.title('FFT of Part C')

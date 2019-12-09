@@ -57,4 +57,4 @@ def animate(i):
 
 anim = animation.FuncAnimation(fig, animate,
 init_func=init,frames=360,interval=20,blit=True)
-anim.save('pendulum.mp4')
+plt.show()

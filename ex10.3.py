@@ -55,5 +55,4 @@ def animate(k):
 
 anim = animation.FuncAnimation(fig, animate,
 init_func=init,frames=30,interval=50,blit=True)
-anim.save('brownian_motion.mp4')
 plt.show()

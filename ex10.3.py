@@ -1,3 +1,8 @@
+"""
+Mubinjon Satymov
+Phys 4150
+Exercise 10.3: Brownian motion
+"""
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation

@@ -1,9 +1,8 @@
-##Importing the libaries and packages needed to complete the lab
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 
-N = 100    #Number of steps the particle will take
+N = 100        #Number of itteration(or particles)
 i = 2          #x coordinate
 j = 2          #y coordinate
 L = 6          #Boundaries of X and Y coordinates

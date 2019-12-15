@@ -1,37 +1,57 @@
-"""
-Mubinjon Satymov
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy.constants as sc
 
-Exercise 5.21: Differentiation
+#Charges in C 
+q1, q2=1,-1
 
-Electric field of a charge distribution:
-We have a distribution of charges and we want to calculate the resulting 
-electric field. One way to do this is to first calculate the electric potential
-φ and then take its gradient. For a point charge q at the origin, the electric 
-potential at a distance r from the origin is
+#Distance between charges
+r = 0.1
 
-Phi = q/(4*pi*epsilon_0*r)
+def Phi(q,r):  #Potential Function
+    return q/(4*np.pi*sc.epsilon_0*r)
 
-and the electric field is E = −∇φ.
+print("Total potential is:",(Phi(q1, r)+Phi(q2,r)))
+print("We can see that total potential is Zero\n"
+      "Which is correct since according to the\n"
+      "formula Total Potential=(kpcos(theta))/(r^2\n"
+      ",where k=(4*pi*epsilon0).\n"
+      "When we have Dipole theta=90 and cos(90)=0")
 
-a)You have two charges, of ±1 C, 10 cm apart. Calculate the resulting electric 
-potential on a 1 m × 1 m square plane surrounding the charges and passing 
-through them. Calculate the potential at 1 cm spaced points in a grid and make 
-a visualization on the screen of the potential using a density plot.
-b)Now calculate the partial derivatives of the potential with respect to 
-x and y and hence find the electric field in the xy plane. Make a visualization 
-of the field also. This is a little trickier than visualizing the potential, 
-because the electric field has both magnitude and direction. One way to do it 
-might be to make two density plots, one for the magnitude, and one for the 
-direction, the latter using the “hsv” color scheme in pylab, which is a rainbow
-scheme that passes through all the colors but starts and ends with the same 
-shade of red, which makes it suitable for representing things like directions 
-or angles that go around the full circle and end up where they started. A more 
-sophisticated visualization might use the arrow object from the visual package, 
-drawing a grid of arrows with direction and length chosen to represent the 
-field.
+#Matrix of 100x100 created, which represents different coordinates
+n = 100
+total_phi= np.zeros([n,n])
+x=np.linspace(-.5, .5, num = n)
+y=x
 
-Solution:
-    
-"""    
-#Part a)
-#Part b)
+#Calculating Total potential for every point
+xp=[-0.05,0.05]
+yp=[0,0]
+for i in range (n):
+    for j in range(n):
+        r1= np.sqrt((x[i] - xp[0])**2+(y[j]-yp[0])**2)
+        r2= np.sqrt((x[i] - xp[1])**2+(y[j]-yp[1])**2)
+        qpos= Phi(q1,r1)
+        qneg= Phi(q2,r2)
+        total_phi[i][j]=qpos+qneg
+
+
+map=plt.imshow(total_phi)
+map.set_cmap("Greys")
+plt.title("Total Potential Density Plot")
+plt.show()
+
+#Plotting Electral Potential
+dx=np.ones([n,n])
+dy=np.ones([n,n])
+
+for i in range (0,n-1,5 ):
+   for j in range(0,n-1,5):
+       dx[i][j]=(total_phi[i+1][j]-total_phi[i-1][j])/(n)
+       dy[i][j]=(total_phi[i][j+1]-total_phi[i][j-1])/(n)
+       plt.arrow(x[i],y[j],1e-9*dx[i][j], 1e-9*dy[i][j],  )
+       plt.xlim(-1,1)
+       plt.ylim(-1,1)
+plt.title("Visualiation of the field")
+plt.show()
+ 
